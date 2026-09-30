@@ -1,0 +1,4747 @@
+/* ==========================================================================
+   B95 PROJECT — MINIMAL ARCHITECTURAL PUBLICATION SYSTEM
+   Simple · Premium · Bold · Clean · Architectural · Elegant
+   Complete Redesign: Services, References, Featured Project
+   ========================================================================== */
+
+:root {
+  /* Official B95 Corporate Identity Palette (b95project.com.tr) */
+  --b95-red: #A01504;                   /* Signature Turkish Corporate Crimson */
+  --b95-red-hover: #BF1905;             /* Interactive Hover Red */
+  --b95-red-dark: #820F02;              /* Deep Structural Red */
+  --b95-red-subtle: #FEF2F2;            /* Clean light red wash for badges */
+  --b95-red-border: rgba(160, 21, 4, 0.3); /* Hairline red border */
+  --b95-dark: #121212;                  /* Official Deep Charcoal / Black */
+  --b95-white: #FFFFFF;                 /* Pure Corporate White */
+  --bg-page: #FFFFFF;                   /* Crisp Monograph Sheet Paper */
+  --bg-alt: #F8FAFC;                    /* Architectural stone off-white */
+  --bg-dark: #121212;                   /* Deep rich charcoal */
+  --text-main: #0F172A;                 /* Deep structural charcoal */
+  --text-muted: #475569;                /* Editorial body grey */
+  --text-dim: #94A3B8;                  /* Subdued caption grey */
+  --text-light: #FFFFFF;                /* Pure white on dark surfaces */
+  --text-light-muted: #CBD5E1;          /* Muted light text */
+  --border-light: #E2E8F0;              /* Architectural hairline rule */
+  --border-dark: rgba(255, 255, 255, 0.12);
+
+  /* Typography */
+  --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  --a4-max-width: 1340px;
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: #EAE6DE;
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-display);
+  background-color: #EAE6DE;
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* Minimal Top Command Bar */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 2.5px solid var(--b95-red);
+  padding: 1.15rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.nav-brand-link {
+  text-decoration: none;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.nav-logo-img {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+}
+
+.nav-brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.nav-brand-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #0F172A;
+  line-height: 1;
+}
+
+.nav-brand-sub {
+  font-family: 'Space Grotesk', monospace, sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--b95-red);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.nav-links-group {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+  list-style: none;
+}
+
+.nav-links-group a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.nav-links-group a:hover,
+.nav-links-group a.active {
+  color: var(--b95-red);
+}
+
+.nav-print-trigger {
+  background: var(--b95-red);
+  color: #FFFFFF;
+  border: none;
+  font-family: inherit;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.6rem 1.3rem;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(160, 21, 4, 0.28);
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-print-trigger:hover {
+  background: var(--b95-red-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(160, 21, 4, 0.38);
+}
+
+/* Master Monograph Canvas */
+.monograph-canvas {
+  max-width: var(--a4-max-width);
+  margin: 2rem auto 5rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  padding: 0 1rem;
+}
+
+/* Individual A4 Section Page */
+.profile-sheet {
+  background-color: var(--bg-page);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.profile-sheet.light-sheet {
+  padding: 4.5rem 4.5rem 5rem 4.5rem;
+  min-height: 1100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.profile-sheet.dark-sheet {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  padding: 5rem 4.5rem;
+  min-height: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Running Minimal Header / Footer */
+.sheet-meta-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 1rem;
+  margin-bottom: 3.5rem;
+}
+
+.sheet-meta-header span.sec-accent {
+  color: var(--b95-red);
+}
+
+.dark-sheet .sheet-meta-header {
+  border-bottom-color: var(--border-dark);
+  color: var(--text-light-muted);
+}
+
+.sheet-meta-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  border-top: 1px solid var(--border-light);
+  padding-top: 1.25rem;
+  margin-top: 3.5rem;
+}
+
+.dark-sheet .sheet-meta-footer {
+  border-top-color: var(--border-dark);
+  color: var(--text-light-muted);
+}
+
+/* Common Section Headline Wraps */
+.section-headline-wrap {
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.section-num-tag {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--b95-red);
+  margin-bottom: 0.4rem;
+}
+
+.editorial-headline {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  text-transform: uppercase;
+  color: var(--text-main);
+}
+
+.editorial-lead-text {
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  max-width: 680px;
+  line-height: 1.6;
+  margin-top: 0.85rem;
+}
+
+/* ==========================================================================
+   01: HERO COVER (PRESERVED EXACTLY AS IS)
+   ========================================================================== */
+/* ==========================================================================
+   01: HERO COVER (PRESERVED & PERFECTED TYPOGRAPHY)
+   ========================================================================== */
+.hero-cover-sheet {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 850px;
+  min-height: 850px;
+  padding: 0 !important;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.hero-cover-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-cover-overlay {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  min-height: 850px;
+  padding: 3.5rem 4rem 2.5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #FFF;
+  background: linear-gradient(180deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.18) 45%, rgba(0,0,0,0.88) 100%);
+  box-sizing: border-box;
+}
+
+.hero-top-lockup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero-brand-mark {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.hero-logo-img {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  filter: brightness(0) invert(1) drop-shadow(0 2px 10px rgba(0, 0, 0, 0.65));
+  transition: transform 0.25s ease;
+}
+
+.hero-logo-img:hover {
+  transform: scale(1.03);
+}
+
+.hero-brand-titles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-brand-name {
+  font-size: 2.1rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+  color: #FFFFFF;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
+}
+
+.hero-brand-name span.red-period {
+  color: #EF4444;
+}
+
+.hero-brand-slogan {
+  font-family: 'Space Grotesk', monospace, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  margin-top: 0.45rem;
+  opacity: 0.95;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
+}
+
+.hero-edition-tag {
+  font-family: 'Space Grotesk', monospace, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 0.55rem 1.15rem;
+  border-radius: 4px;
+}
+
+.hero-center-content {
+  margin-top: auto;
+  margin-bottom: 3.5rem;
+}
+
+.hero-main-title {
+  font-size: clamp(3rem, 5.5vw, 4.4rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin: 0;
+  color: #FFFFFF;
+  text-shadow: 0 4px 25px rgba(0, 0, 0, 0.65);
+}
+
+.hero-main-title span.thin-sub {
+  font-weight: 300;
+  display: block;
+  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+  letter-spacing: -0.015em;
+  color: rgba(255, 255, 255, 0.92);
+  margin-top: 0.55rem;
+  text-transform: uppercase;
+}
+
+.hero-bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  padding-top: 1.5rem;
+}
+
+.hero-bottom-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.hero-bottom-col--right {
+  text-align: right;
+  align-items: flex-end;
+}
+
+.hero-bottom-label {
+  font-family: 'Space Grotesk', monospace, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+}
+
+.hero-bottom-val {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* ==========================================================================
+   01 — SERVICES: COMPLETE ARCHITECTURAL REDESIGN
+   Editorial Opening + Hero Photograph + Architectural Service Catalogue
+   ========================================================================== */
+.services-editorial-opener {
+  margin-bottom: 3rem;
+}
+
+.services-hero-showcase {
+  width: 100%;
+  height: 440px;
+  overflow: hidden;
+  margin-bottom: 4rem;
+  position: relative;
+  background-color: #000;
+}
+
+.services-hero-showcase img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Architectural Service Catalogue System */
+.services-catalogue-stream {
+  display: flex;
+  flex-direction: column;
+}
+
+.catalogue-row-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  border-top: 1px solid var(--border-light);
+  padding: 3rem 0;
+}
+
+.catalogue-row-pair:last-child {
+  border-bottom: 1px solid var(--border-light);
+}
+
+.catalogue-service-unit {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.catalogue-unit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.catalogue-unit-num {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--b95-red);
+  line-height: 1;
+}
+
+/* Custom Architectural Line Icon (44px) */
+.catalogue-arch-icon {
+  width: 44px;
+  height: 44px;
+  stroke: var(--text-main);
+  flex-shrink: 0;
+}
+
+.catalogue-unit-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  line-height: 1.18;
+}
+
+.catalogue-unit-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  max-width: 420px;
+}
+
+/* ==========================================================================
+   02 — RANGE OF PROJECTS: PRESERVED EXACTLY AS IS
+   ========================================================================== */
+.sectors-editorial-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.sector-hero-frame {
+  position: relative;
+  width: 100%;
+  height: 460px;
+  overflow: hidden;
+  background: #000;
+}
+
+.sector-hero-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sector-caption-plate {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 2rem 2.5rem;
+  background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 100%);
+  width: 100%;
+  color: #FFF;
+}
+
+.sector-label-small {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #FFF;
+  margin-bottom: 0.3rem;
+}
+
+.sector-label-large {
+  font-size: 1.7rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.sectors-two-up-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.sector-medium-frame {
+  position: relative;
+  height: 310px;
+  overflow: hidden;
+  background: #000;
+}
+
+.sector-medium-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sectors-sub-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.sector-sub-frame {
+  position: relative;
+  height: 270px;
+  overflow: hidden;
+  background: #000;
+}
+
+.sector-sub-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ==========================================================================
+   03 — OUR REFERENCES: COMPLETE ARCHITECTURAL REDESIGN
+   "Projects Without Borders" + Large Regional Map (45%) + Index + Gallery
+   ========================================================================== */
+.references-editorial-opener {
+  margin-bottom: 3rem;
+}
+
+.references-spatial-grid {
+  display: grid;
+  grid-template-columns: 46% 54%;
+  gap: 4rem;
+  margin-bottom: 4.5rem;
+  align-items: start;
+}
+
+/* Large Minimal Architectural Map */
+.references-map-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.map-card-canvas {
+  background: #FFF;
+  border: 1px solid var(--border-light);
+  padding: 2rem 1.75rem;
+}
+
+.map-canvas-heading {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--b95-red);
+  margin-bottom: 1.5rem;
+}
+
+.map-spatial-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Project Index with Clear Typographic Hierarchy */
+.references-index-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.index-territory-group {
+  border-top: 1px solid var(--border-light);
+  padding-top: 1.25rem;
+}
+
+.index-country-label {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--b95-red);
+  margin-bottom: 1rem;
+}
+
+.index-project-entries {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.index-entry-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.entry-city-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.entry-project-headline {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.35;
+}
+
+/* Curated Asymmetric Editorial Photography (1 Large + 2 Smaller) */
+.references-curated-showcase {
+  display: grid;
+  grid-template-columns: 62% 38%;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.showcase-primary-frame {
+  position: relative;
+  min-height: 420px;
+  overflow: hidden;
+  background: #000;
+}
+
+.showcase-primary-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.showcase-stacked-pair {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  justify-content: space-between;
+}
+
+.showcase-sub-frame {
+  position: relative;
+  height: 195px;
+  overflow: hidden;
+  background: #000;
+}
+
+.showcase-sub-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.showcase-caption {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-top: 0.5rem;
+}
+
+/* ==========================================================================
+   04 — FEATURED PROJECT: COMPLETE ARCHITECTURAL CASE STUDY
+   Full-Width Hero + Split Editorial + Specifications Strip + Curated Sequence
+   ========================================================================== */
+.case-study-hero-banner {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  background: #000;
+  margin-bottom: 4.5rem;
+}
+
+.case-study-hero-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: contrast(1.04);
+}
+
+.case-study-hero-badge {
+  position: absolute;
+  bottom: 3rem;
+  left: 3.5rem;
+  color: #FFF;
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(8px);
+  padding: 0.85rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.case-study-hero-badge .badge-sub {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.case-study-hero-badge .badge-loc {
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Split Editorial Layout: Title Left / Narrative Right */
+.case-study-split-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+  margin-bottom: 4.5rem;
+}
+
+.case-study-display-title {
+  font-size: 3.4rem;
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+  color: var(--text-main);
+}
+
+.case-study-narrative-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+
+.case-study-tag {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--b95-red);
+}
+
+.case-study-story-text {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* Technical Specification Strip (Pure Typography, Thin Dividers, No Cards) */
+.case-study-specs-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 5rem;
+}
+
+.specs-strip-unit {
+  padding: 3.25rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-right: 1px solid var(--border-light);
+}
+
+.specs-strip-unit:first-child {
+  padding-left: 0;
+}
+
+.specs-strip-unit:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+.specs-huge-stat {
+  font-size: 4.4rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--text-main);
+}
+
+.specs-label-text {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--b95-red);
+}
+
+.specs-desc-text {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Case Study Photo Sequence: Large (68%) + 2 Stacked (32%) + Panoramic Detail */
+.case-study-photo-sequence {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.sequence-split-row {
+  display: grid;
+  grid-template-columns: 68% 32%;
+  gap: 2rem;
+}
+
+.sequence-large-frame {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  background: #000;
+}
+
+.sequence-large-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sequence-stacked-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: space-between;
+}
+
+.sequence-small-frame {
+  height: 232px;
+  overflow: hidden;
+  background: #000;
+}
+
+.sequence-small-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sequence-panoramic-frame {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  background: #000;
+}
+
+.sequence-panoramic-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sequence-caption {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-top: 0.5rem;
+}
+
+/* ==========================================================================
+   05 — FOOTER: PRESERVED EXACTLY AS IS & FULLY VISIBLE IN PDF
+   ========================================================================== */
+.footer-cinematic-sheet {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 850px;
+  min-height: 850px;
+  padding: 0 !important;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.footer-cinematic-sheet .hero-cover-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  filter: brightness(0.68) contrast(1.08);
+}
+
+.footer-cinematic-overlay {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  min-height: 850px;
+  padding: 3.25rem 4rem 2.75rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #FFF;
+  background: linear-gradient(180deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.22) 42%, rgba(0,0,0,0.85) 100%);
+  box-sizing: border-box;
+}
+
+.footer-brand-hero {
+  margin-top: auto;
+  margin-bottom: 2rem;
+}
+
+.colophon-logo-wrap {
+  margin-bottom: 1.5rem;
+}
+
+.colophon-brand-logo {
+  height: 68px;
+  width: auto;
+  object-fit: contain;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  filter: brightness(0) invert(1) drop-shadow(0 2px 14px rgba(0, 0, 0, 0.7));
+}
+
+.footer-title-huge {
+  font-family: 'Space Grotesk', var(--font-primary), sans-serif;
+  font-size: 3.8rem;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #FFF;
+  margin: 0 0 1rem 0;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7);
+}
+
+.footer-title-huge span.red-period {
+  color: var(--b95-red);
+}
+
+.footer-mission-lead {
+  font-family: 'Space Grotesk', var(--font-primary), sans-serif;
+  font-size: 1.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 1.25;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.footer-closing-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.footer-location-statement {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #FFF;
+}
+
+.footer-official-web {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-official-web:hover {
+  color: #FFF;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 860px) {
+  .site-nav {
+    padding: 1rem 1.5rem;
+  }
+
+  .nav-links-group {
+    display: none;
+  }
+
+  .profile-sheet.light-sheet {
+    padding: 3rem 1.75rem;
+    min-height: auto;
+  }
+
+  .hero-cover-overlay,
+  .footer-cinematic-overlay {
+    padding: 3rem 1.75rem;
+  }
+
+  .hero-main-title {
+    font-size: 2.6rem;
+  }
+
+  .hero-main-title span.thin-sub {
+    font-size: 1.5rem;
+  }
+
+  .editorial-headline {
+    font-size: 2.2rem;
+  }
+
+  .catalogue-row-pair,
+  .sectors-two-up-grid,
+  .sectors-sub-grid,
+  .references-spatial-grid,
+  .references-curated-showcase,
+  .case-study-split-section,
+  .case-study-specs-strip,
+  .sequence-split-row,
+  .footer-closing-bar {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  .specs-strip-unit {
+    border-right: none !important;
+    border-bottom: 1px solid var(--border-light);
+    padding: 1.5rem 0 !important;
+  }
+
+  .specs-huge-stat {
+    font-size: 3.2rem;
+  }
+
+  .footer-title-huge {
+    font-size: 3.2rem;
+  }
+}
+
+/* ==========================================================================
+   B95 PROJECT — INDUSTRIAL LUXURY / ARCHITECTURAL MONOGRAPH REVAMP
+   Turnkey Solutions (Services) · References & Footprint · Featured Case Study
+   Color Palette & Mathematical Rhythm: Pure CSS / No Frameworks
+   ========================================================================== */
+
+:root {
+  /* Industrial Luxury / Monograph Variables */
+  --b95-bg-primary: #FFFFFF;
+  --b95-bg-subtle: #F8FAFC;
+  --b95-surface-secondary: #F1F5F9;
+  --b95-text-primary: #0F172A;
+  --b95-text-secondary: #334155;
+  --b95-text-muted: #64748B;
+  --b95-border: #E2E8F0;
+  --b95-border-subtle: rgba(226, 232, 240, 0.7);
+  --b95-border-strong: #CBD5E1;
+  --b95-accent: #A01504;
+  --b95-accent-dark: #820F02;
+  --b95-accent-subtle: rgba(160, 21, 4, 0.08);
+
+  /* Typography Scale */
+  --b95-font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --b95-font-mono: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Animation & Transition */
+  --b95-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --b95-transition: all 0.25s var(--b95-ease-out);
+  --b95-transition-transform: transform 0.25s var(--b95-ease-out), border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Base Wrapper for Redesigned Sections */
+.b95-section {
+  position: relative;
+  background-color: var(--b95-bg-primary);
+  color: var(--b95-text-primary);
+  padding: 5rem 0;
+  border: 1px solid var(--b95-border);
+  box-shadow: 0 14px 45px rgba(15, 23, 42, 0.04);
+}
+
+.b95-container {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+/* Architectural Monograph Header */
+.b95-section-header {
+  margin-bottom: 3.75rem;
+  border-bottom: 1px solid var(--b95-border);
+  padding-bottom: 2.25rem;
+}
+
+.b95-section-eyebrow {
+  font-family: var(--b95-font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--b95-text-muted);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.b95-eyebrow-accent {
+  color: var(--b95-accent);
+}
+
+.b95-section-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.b95-section-title {
+  font-family: var(--b95-font-main);
+  font-size: 2.75rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--b95-text-primary);
+}
+
+.b95-section-subtitle {
+  font-family: var(--b95-font-main);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--b95-text-muted);
+  letter-spacing: -0.01em;
+}
+
+.b95-section-lead {
+  font-size: 1.05rem;
+  line-height: 1.68;
+  color: var(--b95-text-secondary);
+  max-width: 860px;
+  margin: 0;
+}
+
+/* ==========================================================================
+   1. SECTION: OUR SERVICES (01 TO 08)
+   ========================================================================== */
+.b95-services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.b95-service-card {
+  position: relative;
+  background-color: var(--b95-bg-primary);
+  border: 1px solid var(--b95-border);
+  padding: 2.5rem 1.85rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: var(--b95-transition-transform);
+  cursor: default;
+  outline: none;
+}
+
+.b95-service-card:hover,
+.b95-service-card:focus-visible {
+  transform: translateY(-4px);
+  border-color: var(--b95-border-strong);
+  box-shadow: 0 12px 28px -8px rgba(15, 23, 42, 0.07);
+}
+
+.b95-service-card__top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--b95-border-subtle);
+  padding-bottom: 1rem;
+}
+
+.b95-service-card__number {
+  font-family: var(--b95-font-mono);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--b95-text-primary);
+  transition: color 0.2s ease;
+}
+
+.b95-service-card:hover .b95-service-card__number {
+  color: var(--b95-accent);
+}
+
+.b95-service-card__badge {
+  font-family: var(--b95-font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--b95-text-muted);
+  background-color: var(--b95-surface-secondary);
+  padding: 0.25rem 0.55rem;
+  border-radius: 2px;
+}
+
+.b95-service-card__title {
+  font-family: var(--b95-font-main);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  color: var(--b95-text-primary);
+  margin-bottom: 1rem;
+}
+
+.b95-service-card__desc {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--b95-text-secondary);
+  margin: 0;
+}
+
+.b95-service-card__accent-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--b95-accent);
+  transition: width 0.3s var(--b95-ease-out);
+}
+
+.b95-service-card:hover .b95-service-card__accent-bar {
+  width: 100%;
+}
+
+/* ==========================================================================
+   2. SECTION: REFERENCES & REGIONAL REACH
+   ========================================================================== */
+.b95-references-layout {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 2.25rem;
+  align-items: flex-start;
+}
+
+.b95-footprint-panel {
+  position: sticky;
+  top: 6rem;
+}
+
+.b95-footprint-card {
+  background-color: var(--b95-bg-primary);
+  border: 1px solid var(--b95-border);
+  padding: 2.25rem;
+}
+
+.b95-footprint-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--b95-border-subtle);
+}
+
+.b95-footprint-tag {
+  font-family: var(--b95-font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--b95-accent);
+}
+
+.b95-footprint-coords {
+  font-family: var(--b95-font-mono);
+  font-size: 0.72rem;
+  color: var(--b95-text-muted);
+}
+
+.b95-footprint-card__title {
+  font-family: var(--b95-font-main);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--b95-text-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.b95-footprint-card__desc {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--b95-text-secondary);
+  margin-bottom: 1.75rem;
+}
+
+.b95-footprint-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--b95-border-subtle);
+  border-bottom: 1px solid var(--b95-border-subtle);
+  margin-bottom: 1.5rem;
+}
+
+.b95-stat-value {
+  display: block;
+  font-family: var(--b95-font-main);
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--b95-text-primary);
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.b95-stat-label {
+  display: block;
+  font-family: var(--b95-font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--b95-text-muted);
+  line-height: 1.35;
+}
+
+.b95-footprint-map-wrap {
+  width: 100%;
+  border: 1px solid var(--b95-border-subtle);
+  background-color: var(--b95-surface-secondary);
+  padding: 1rem;
+}
+
+.b95-footprint-map {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* References Data Matrix Grid */
+.b95-matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.b95-ref-card {
+  background-color: var(--b95-bg-primary);
+  border: 1px solid var(--b95-border);
+  padding: 2rem 1.85rem;
+  display: flex;
+  flex-direction: column;
+  transition: var(--b95-transition-transform);
+  cursor: default;
+  outline: none;
+}
+
+.b95-ref-card:hover,
+.b95-ref-card:focus-visible {
+  transform: translateY(-4px);
+  border-color: var(--b95-border-strong);
+  box-shadow: 0 12px 28px -8px rgba(15, 23, 42, 0.07);
+}
+
+.b95-ref-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.15rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--b95-border-subtle);
+}
+
+.b95-ref-card__location {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--b95-font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--b95-accent);
+}
+
+.b95-icon-pin {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+.b95-ref-card__badge {
+  font-family: var(--b95-font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--b95-text-secondary);
+  background-color: var(--b95-surface-secondary);
+  padding: 0.25rem 0.55rem;
+  border-radius: 2px;
+}
+
+.b95-ref-card__title {
+  font-family: var(--b95-font-main);
+  font-size: 1.18rem;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  color: var(--b95-text-primary);
+  margin-bottom: 0.85rem;
+}
+
+.b95-ref-card__scope {
+  font-size: 0.9rem;
+  line-height: 1.62;
+  color: var(--b95-text-muted);
+  margin: 0;
+}
+
+/* ==========================================================================
+   3. SECTION: FEATURED PROJECT / CASE STUDY
+   ========================================================================== */
+.b95-case-study-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.b95-case-meta-bar {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.75rem;
+}
+
+.b95-meta-pill {
+  font-family: var(--b95-font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--b95-border);
+  background-color: var(--b95-surface-secondary);
+  color: var(--b95-text-secondary);
+  border-radius: 2px;
+}
+
+.b95-meta-pill--endorse {
+  border-color: rgba(185, 28, 28, 0.35);
+  background-color: var(--b95-accent-subtle);
+  color: var(--b95-accent-dark);
+  font-weight: 700;
+}
+
+.b95-case-lead {
+  font-size: 1.12rem;
+  line-height: 1.68;
+  font-weight: 500;
+  color: var(--b95-text-primary);
+  margin-bottom: 1.25rem;
+}
+
+.b95-case-body {
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: var(--b95-text-secondary);
+  margin-bottom: 2.5rem;
+}
+
+/* Technical Specification Callout Metrics Grid (2x2) */
+.b95-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  border-top: 1px solid var(--b95-border);
+  padding-top: 2rem;
+}
+
+.b95-metric-card {
+  background-color: var(--b95-surface-secondary);
+  border: 1px solid var(--b95-border);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: var(--b95-transition);
+}
+
+.b95-metric-card:hover {
+  background-color: var(--b95-bg-primary);
+  border-color: var(--b95-accent);
+  transform: translateY(-2px);
+}
+
+.b95-metric-card__value {
+  font-family: var(--b95-font-main);
+  font-size: 2.1rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: var(--b95-accent);
+  margin-bottom: 0.4rem;
+}
+
+.b95-metric-card__title {
+  font-family: var(--b95-font-main);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--b95-text-primary);
+  margin-bottom: 0.35rem;
+  line-height: 1.3;
+}
+
+.b95-metric-card__desc {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--b95-text-muted);
+  margin: 0;
+}
+
+/* Case Study Media Gallery (Hero View + Subgrid) */
+.b95-case-study-media {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.b95-media-hero {
+  position: relative;
+  border: 1px solid var(--b95-border);
+  background-color: #000;
+  overflow: hidden;
+}
+
+.b95-media-hero .b95-media-img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s var(--b95-ease-out);
+}
+
+.b95-media-hero:hover .b95-media-img {
+  transform: scale(1.025);
+}
+
+.b95-media-badge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.92) 0%, rgba(15, 23, 42, 0.4) 65%, transparent 100%);
+  padding: 1.75rem 1.5rem 1.25rem;
+  color: #FFFFFF;
+}
+
+.b95-media-badge span {
+  display: block;
+  font-family: var(--b95-font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #E2E8F0;
+  margin-bottom: 0.25rem;
+}
+
+.b95-media-badge strong {
+  display: block;
+  font-family: var(--b95-font-main);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.b95-media-subgrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.b95-media-subcard {
+  border: 1px solid var(--b95-border);
+  background-color: var(--b95-bg-primary);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.b95-media-subcard .b95-media-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s var(--b95-ease-out);
+}
+
+.b95-media-subcard:hover .b95-media-img {
+  transform: scale(1.04);
+}
+
+.b95-media-caption {
+  font-family: var(--b95-font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--b95-text-muted);
+  padding: 0.75rem 0.65rem;
+  background-color: var(--b95-surface-secondary);
+  border-top: 1px solid var(--b95-border);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ==========================================================================
+   RESPONSIVENESS (BREAKPOINTS: 1024px & 640px)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .b95-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .b95-references-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .b95-footprint-panel {
+    position: static;
+  }
+
+  .b95-case-study-layout {
+    grid-template-columns: 1fr;
+    gap: 2.75rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .b95-section {
+    padding: 4.5rem 0;
+  }
+
+  .b95-container {
+    padding: 0 1.25rem;
+  }
+
+  .b95-section-title {
+    font-size: 2.1rem;
+  }
+
+  .b95-services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .b95-matrix-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .b95-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .b95-media-subgrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   B95 PROJECT — PRINCIPAL ARCHITECTURAL DESIGN SYSTEM & COMPONENT MODULES
+   Pure CSS3: Variables, Flexbox, CSS Grid, Media Queries, Zero Frameworks
+   Sections: Services (2-Spread) · References (Elevated Footprint) · Case Study
+   ========================================================================== */
+
+:root {
+  /* Extended Architectural Monograph Tokens */
+  --b95-accent: #B91C1C;
+  --b95-accent-dark: #991B1B;
+  --b95-accent-subtle: rgba(185, 28, 28, 0.08);
+  --b95-accent-glow: rgba(185, 28, 28, 0.25);
+  
+  --b95-slate-900: #0F172A;
+  --b95-slate-800: #1E293B;
+  --b95-slate-700: #334155;
+  --b95-slate-600: #475569;
+  --b95-slate-500: #64748B;
+  --b95-slate-400: #94A3B8;
+  --b95-slate-200: #E2E8F0;
+  --b95-slate-100: #F1F5F9;
+  --b95-slate-50:  #F8FAFC;
+  
+  --b95-border: #E2E8F0;
+  --b95-border-strong: #CBD5E1;
+  --b95-border-dark: #1E293B;
+  
+  --b95-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --b95-transition-fast: all 0.2s var(--b95-ease-out);
+  --b95-transition-card: transform 0.3s var(--b95-ease-out), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ==========================================================================
+   SECTION 1: SERVICES (2-SPREAD ARCHITECTURE)
+   ========================================================================== */
+.b95-services-spread {
+  background-color: #FFFFFF;
+}
+
+.b95-services-spread--alt {
+  background-color: var(--b95-slate-50);
+  border-top: 1px solid var(--b95-border);
+}
+
+.b95-services-spread-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.b95-service-spread-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--b95-border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: var(--b95-transition-card);
+  cursor: pointer;
+  outline: none;
+}
+
+.b95-service-spread-card:hover,
+.b95-service-spread-card:focus-visible {
+  transform: translateY(-6px);
+  border-color: var(--b95-border-strong);
+  box-shadow: 0 20px 35px -10px rgba(15, 23, 42, 0.08);
+}
+
+.b95-card-media-thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: var(--b95-slate-900);
+}
+
+.b95-card-media-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s var(--b95-ease-out);
+}
+
+.b95-service-spread-card:hover .b95-card-media-thumb img {
+  transform: scale(1.05);
+}
+
+.b95-card-badge-top {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.b95-card-num {
+  font-family: var(--b95-font-mono);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 0.3rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.b95-card-cat {
+  font-family: var(--b95-font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 0.35rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.b95-card-cat i {
+  color: var(--b95-accent);
+}
+
+.b95-card-body {
+  padding: 2.25rem 2rem 1.85rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.b95-card-title {
+  font-family: var(--b95-font-main);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: var(--b95-slate-900);
+  margin-bottom: 0.85rem;
+  transition: color 0.2s ease;
+}
+
+.b95-service-spread-card:hover .b95-card-title {
+  color: var(--b95-accent);
+}
+
+.b95-card-desc {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--b95-slate-700);
+  margin-bottom: 1.75rem;
+  flex-grow: 1;
+}
+
+.b95-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--b95-border);
+  padding-top: 1rem;
+}
+
+.b95-card-phase {
+  font-family: var(--b95-font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--b95-slate-500);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.b95-card-arrow {
+  color: var(--b95-slate-400);
+  font-size: 0.85rem;
+  transition: transform 0.25s var(--b95-ease-out), color 0.25s ease;
+}
+
+.b95-service-spread-card:hover .b95-card-arrow {
+  transform: translateX(5px);
+  color: var(--b95-accent);
+}
+
+/* ==========================================================================
+   SECTION 2: REFERENCES & REGIONAL REACH (ELEVATED GLOBAL FOOTPRINT)
+   ========================================================================== */
+.b95-references-elevated {
+  background-color: #FFFFFF;
+}
+
+.b95-footprint-showcase {
+  margin-bottom: 3.5rem;
+}
+
+.b95-footprint-graphic-box {
+  background-color: var(--b95-slate-900);
+  border: 1px solid var(--b95-slate-800);
+  overflow: hidden;
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.4);
+}
+
+.b95-footprint-graphic-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.15rem 1.75rem;
+  background-color: rgba(15, 23, 42, 0.95);
+  border-bottom: 1px solid var(--b95-slate-800);
+}
+
+.b95-graphic-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--b95-font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #E2E8F0;
+}
+
+.b95-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--b95-accent);
+  box-shadow: 0 0 10px var(--b95-accent);
+  animation: b95-pulse-glow 2s infinite;
+}
+
+@keyframes b95-pulse-glow {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(185, 28, 28, 0.7); }
+  70% { transform: scale(1.1); box-shadow: 0 0 0 8px rgba(185, 28, 28, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(185, 28, 28, 0); }
+}
+
+.b95-svg-pulse-ring {
+  transform-origin: center;
+  animation: b95-ring-expand 2.5s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+}
+
+@keyframes b95-ring-expand {
+  0% { r: 6; opacity: 0.9; }
+  100% { r: 24; opacity: 0; }
+}
+
+.b95-graphic-coords {
+  font-family: var(--b95-font-mono);
+  font-size: 0.72rem;
+  color: var(--b95-slate-400);
+  letter-spacing: 0.05em;
+}
+
+.b95-map-canvas-container {
+  padding: 1.5rem 1rem;
+  background: radial-gradient(circle at 30% 30%, #1E293B 0%, #0F172A 70%);
+}
+
+.b95-elevated-map-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Quick Metrics Ribbon */
+.b95-metrics-ribbon {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  align-items: center;
+  background-color: #0B1120;
+  border-top: 1px solid var(--b95-slate-800);
+  padding: 1.5rem 2.5rem;
+}
+
+.b95-ribbon-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.85rem;
+}
+
+.b95-ribbon-val {
+  font-family: var(--b95-font-main);
+  font-size: 1.85rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+}
+
+.b95-ribbon-label {
+  font-family: var(--b95-font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--b95-slate-400);
+}
+
+.b95-ribbon-divider {
+  width: 1px;
+  height: 28px;
+  background-color: var(--b95-slate-800);
+}
+
+/* Architectural Project Rows Table */
+.b95-projects-rows-wrap {
+  border: 1px solid var(--b95-border);
+  background-color: #FFFFFF;
+}
+
+.b95-projects-table-header {
+  display: grid;
+  grid-template-columns: 210px 180px 320px 1fr;
+  gap: 1.5rem;
+  padding: 1rem 1.75rem;
+  background-color: var(--b95-slate-100);
+  border-bottom: 1px solid var(--b95-border);
+  font-family: var(--b95-font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--b95-slate-500);
+}
+
+.b95-project-row {
+  display: grid;
+  grid-template-columns: 210px 180px 320px 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.45rem 1.75rem;
+  border-bottom: 1px solid var(--b95-border);
+  border-left: 3px solid transparent;
+  transition: all 0.2s var(--b95-ease-out);
+  cursor: default;
+}
+
+.b95-project-row:last-child {
+  border-bottom: none;
+}
+
+.b95-project-row:hover {
+  background-color: var(--b95-slate-50);
+  border-left-color: var(--b95-accent);
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.03);
+}
+
+.b95-row-loc {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--b95-font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--b95-slate-900);
+}
+
+.b95-pin-red {
+  color: var(--b95-accent);
+  font-size: 0.85rem;
+}
+
+.b95-sector-tag {
+  display: inline-block;
+  font-family: var(--b95-font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.65rem;
+  border-radius: 2px;
+  background-color: var(--b95-slate-100);
+  color: var(--b95-slate-700);
+  border: 1px solid var(--b95-border);
+}
+
+.b95-sector-tag--sports { background: #FEF2F2; color: #991B1B; border-color: #FCA5A5; }
+.b95-sector-tag--infra { background: #F0FDF4; color: #166534; border-color: #86EFAC; }
+.b95-sector-tag--aviation { background: #EFF6FF; color: #1E40AF; border-color: #93C5FD; }
+.b95-sector-tag--diplomatic { background: #FAF5FF; color: #6B21A8; border-color: #D8B4FE; }
+.b95-sector-tag--health { background: #ECFDF5; color: #065F46; border-color: #6EE7B7; }
+.b95-sector-tag--urban { background: #FFFBEB; color: #92400E; border-color: #FDE68A; }
+.b95-sector-tag--comm { background: #F8FAFC; color: #334155; border-color: #CBD5E1; }
+
+.b95-row-title h3 {
+  font-family: var(--b95-font-main);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--b95-slate-900);
+  letter-spacing: -0.01em;
+}
+
+.b95-row-deliverable span {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--b95-slate-600);
+}
+
+/* ==========================================================================
+   SECTION 3: FEATURED PROJECT / CASE STUDY (MONOGRAPH SPEC)
+   ========================================================================== */
+.b95-case-study-monograph {
+  background-color: var(--b95-slate-50);
+}
+
+.b95-case-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  padding-bottom: 2.25rem;
+  border-bottom: 1px solid var(--b95-border);
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.b95-case-headline {
+  font-family: var(--b95-font-main);
+  font-size: 2.75rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--b95-slate-900);
+  margin: 0.35rem 0 0.65rem;
+}
+
+.b95-case-sublocation {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--b95-font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--b95-slate-600);
+}
+
+.b95-case-seals {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.b95-seal-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.25rem;
+  background-color: #FFFFFF;
+  border: 1px solid var(--b95-border);
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
+}
+
+.b95-seal-pill i {
+  font-size: 1.35rem;
+  color: var(--b95-slate-700);
+}
+
+.b95-seal-pill--commend {
+  border-color: rgba(185, 28, 28, 0.3);
+  background-color: #FEF2F2;
+}
+
+.b95-seal-pill--commend i {
+  color: var(--b95-accent);
+}
+
+.b95-seal-sub {
+  display: block;
+  font-family: var(--b95-font-mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--b95-slate-500);
+}
+
+.b95-seal-bold {
+  display: block;
+  font-family: var(--b95-font-main);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--b95-slate-900);
+}
+
+/* Wide Hero Display */
+.b95-case-hero-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--b95-border);
+  background-color: #000;
+  overflow: hidden;
+  margin-bottom: 3.5rem;
+  box-shadow: 0 20px 45px -15px rgba(15, 23, 42, 0.15);
+}
+
+.b95-case-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.b95-case-hero-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  background: linear-gradient(
+    to top,
+    rgba(3, 7, 18, 0.96) 0%,
+    rgba(3, 7, 18, 0.72) 40%,
+    rgba(3, 7, 18, 0.2) 75%,
+    transparent 100%
+  );
+  padding: 2rem 2.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: #FFFFFF;
+}
+
+/* Badge wrapper: kicker + title stacked tightly */
+.b95-hero-meta-badge {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.b95-hero-kicker {
+  font-family: var(--b95-font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: #94A3B8;
+  display: inline-block;
+  line-height: 1;
+}
+
+.b95-hero-status {
+  display: block;
+  font-family: var(--b95-font-main);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: #FFFFFF;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+
+/* Coords bar: white text on crimson red — brand identity */
+.b95-hero-coords {
+  display: flex;
+  align-items: center;
+}
+
+.b95-hero-coords span {
+  font-family: var(--b95-font-mono);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #94A3B8;
+  display: inline-block;
+}
+
+/* Two-Column Engineering Breakdown */
+.b95-case-breakdown-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  align-items: stretch;
+}
+
+/* Left story column */
+.b95-case-story-col {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 2rem 2rem 0;
+}
+
+/* Right specs column — single white block that fills full height */
+.b95-case-specs-col {
+  background: #FFFFFF;
+  border: 1px solid var(--b95-border);
+  border-left: 4px solid var(--b95-accent);
+  overflow: hidden;
+}
+
+/* Left column text styles */
+.b95-case-narrative-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--b95-font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--b95-accent);
+  background-color: var(--b95-accent-subtle);
+  padding: 0.4rem 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.b95-story-lead {
+  font-size: 1.12rem;
+  line-height: 1.7;
+  font-weight: 500;
+  color: var(--b95-slate-900);
+  margin-bottom: 1.25rem;
+}
+
+.b95-story-text {
+  font-size: 0.93rem;
+  line-height: 1.75;
+  color: var(--b95-slate-700);
+  margin-bottom: 1.15rem;
+}
+
+.b95-specs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 100%;
+}
+
+.b95-spec-card {
+  padding: 1.5rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  border-right: 1px solid var(--b95-border);
+  border-bottom: 1px solid var(--b95-border);
+  background: #FFFFFF;
+  transition: background-color 0.2s ease;
+}
+
+/* Remove right border on right column, remove bottom border on last row */
+.b95-spec-card:nth-child(even) {
+  border-right: none;
+}
+
+.b95-spec-card:nth-child(3),
+.b95-spec-card:nth-child(4) {
+  border-bottom: none;
+}
+
+.b95-spec-card:hover {
+  background-color: #FEF2F2;
+}
+
+.b95-spec-stat {
+  font-family: var(--b95-font-main);
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--b95-accent);
+  margin-bottom: 0.4rem;
+}
+
+.b95-spec-name {
+  font-family: var(--b95-font-main);
+  font-size: 0.87rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--b95-slate-900);
+  margin-bottom: 0.45rem;
+}
+
+.b95-spec-desc {
+  font-size: 0.79rem;
+  line-height: 1.55;
+  color: var(--b95-slate-500);
+  margin: 0;
+  flex: 1;
+}
+
+
+/* Bottom Gallery Strip (3-Image Sequence) */
+.b95-case-gallery-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.b95-strip-item {
+  background-color: #FFFFFF;
+  border: 1px solid var(--b95-border);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--b95-transition-card);
+}
+
+.b95-strip-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--b95-border-strong);
+  box-shadow: 0 14px 30px -10px rgba(15, 23, 42, 0.08);
+}
+
+/* Gallery strip frames — with professional overlay on hover */
+.b95-strip-frame {
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  background-color: var(--b95-slate-900);
+  position: relative;
+}
+
+.b95-strip-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(3, 7, 18, 0.72) 0%,
+    rgba(3, 7, 18, 0.15) 60%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.b95-strip-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.88) contrast(1.05);
+  transition: transform 0.5s var(--b95-ease-out), filter 0.4s ease;
+}
+
+.b95-strip-item:hover .b95-strip-frame img {
+  transform: scale(1.06);
+  filter: brightness(0.95) contrast(1.05);
+}
+
+/* Caption overlay — elegant editorial style inside each gallery image */
+.b95-strip-caption-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2.5rem 1.25rem 1rem;
+  background: linear-gradient(to top, rgba(3, 7, 18, 0.82) 0%, transparent 100%);
+  z-index: 2;
+  border-top: none;
+}
+
+.b95-strip-caption-overlay::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: var(--b95-accent);
+  margin-bottom: 0.55rem;
+}
+
+.b95-strip-num {
+  display: none;
+}
+
+.b95-strip-caption {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #FFFFFF;
+  line-height: 1.4;
+  display: block;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES & RESPONSIVE BEHAVIOR
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .b95-services-spread-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .b95-metrics-ribbon {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .b95-ribbon-divider {
+    display: none;
+  }
+
+  .b95-projects-table-header {
+    display: none;
+  }
+
+  .b95-project-row {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+    padding: 1.5rem 1.25rem;
+  }
+
+  .b95-case-breakdown-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .b95-case-gallery-strip {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .b95-case-headline {
+    font-size: 2rem;
+  }
+
+  .b95-specs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .b95-card-media-thumb {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+/* ==========================================================================
+   SOVEREIGN TERRITORY MATRIX (REFERENCES & REGIONAL REACH REDESIGN)
+   Pure CSS System: 2-Column Responsive Grid, Silhouette Badges, Vector Ribbon
+   ========================================================================== */
+
+.b95-territory-section {
+  background-color: #FFFFFF;
+}
+
+/* Top Component: Footprint Card & Operational Ribbon */
+.b95-territory-footprint-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--b95-border);
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.05);
+  margin-bottom: 3.5rem;
+  overflow: hidden;
+}
+
+.b95-footprint-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 1.75rem;
+  background-color: var(--b95-slate-50);
+  border-bottom: 1px solid var(--b95-border);
+}
+
+.b95-footprint-topbar__left {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.b95-footprint-topbar__label {
+  font-family: var(--b95-font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--b95-slate-700);
+}
+
+.b95-coord-tag {
+  font-family: var(--b95-font-mono);
+  font-size: 0.72rem;
+  color: var(--b95-slate-500);
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.b95-coord-tag i {
+  color: var(--b95-accent);
+}
+
+.b95-territory-vector-canvas {
+  padding: 1rem 1.5rem;
+  background-color: #FFFFFF;
+}
+
+.b95-vector-ribbon-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Sleek Operational Ribbon */
+.b95-operational-ribbon {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+  align-items: center;
+  background-color: var(--b95-slate-900);
+  padding: 1.35rem 2rem;
+  border-top: 1px solid var(--b95-border);
+}
+
+.b95-ribbon-metric {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.b95-metric-num {
+  font-family: var(--b95-font-main);
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: #FFFFFF;
+}
+
+.b95-metric-text strong {
+  display: block;
+  font-family: var(--b95-font-main);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.25;
+}
+
+.b95-metric-text span {
+  display: block;
+  font-family: var(--b95-font-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--b95-slate-400);
+}
+
+.b95-ribbon-sep {
+  width: 1px;
+  height: 32px;
+  background-color: var(--b95-slate-800);
+}
+
+/* ==========================================================================
+   SOVEREIGN TERRITORY MATRIX GRID & PROJECT CARDS
+   ========================================================================== */
+.b95-territory-matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.85rem;
+}
+
+.b95-territory-card {
+  position: relative;
+  background-color: #FFFFFF;
+  border: 1px solid var(--b95-border);
+  padding: 2.25rem 2rem 1.85rem;
+  display: flex;
+  flex-direction: column;
+  transition: var(--b95-transition-card);
+  outline: none;
+  cursor: default;
+}
+
+.b95-territory-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--b95-accent);
+  transition: width 0.3s var(--b95-ease-out);
+}
+
+.b95-territory-card:hover,
+.b95-territory-card:focus-visible {
+  transform: translateY(-5px);
+  border-color: var(--b95-border-strong);
+  box-shadow: 0 18px 36px -10px rgba(15, 23, 42, 0.08);
+}
+
+.b95-territory-card:hover::before {
+  width: 100%;
+}
+
+/* Card Anchor Header */
+.b95-card-anchor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.35rem;
+  padding-bottom: 1.15rem;
+  border-bottom: 1px solid var(--b95-border);
+}
+
+.b95-country-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.b95-country-silhouette {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border: 1px solid var(--b95-border);
+  background-color: var(--b95-slate-50);
+  padding: 4px;
+  border-radius: 2px;
+  transition: transform 0.3s var(--b95-ease-out), border-color 0.3s ease;
+}
+
+.b95-territory-card:hover .b95-country-silhouette {
+  transform: scale(1.06);
+  border-color: var(--b95-accent);
+}
+
+.b95-country-badge__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.b95-country-code {
+  font-family: var(--b95-font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--b95-slate-500);
+  line-height: 1.2;
+}
+
+.b95-country-name {
+  font-family: var(--b95-font-main);
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--b95-slate-900);
+  line-height: 1.2;
+}
+
+/* Sector Pill Badges */
+.b95-matrix-sector-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--b95-font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.75rem;
+  border-radius: 2px;
+  border: 1px solid transparent;
+}
+
+.b95-matrix-sector-tag--sports { background: #FEF2F2; color: #991B1B; border-color: #FCA5A5; }
+.b95-matrix-sector-tag--infra { background: #F0FDF4; color: #166534; border-color: #86EFAC; }
+.b95-matrix-sector-tag--aviation { background: #EFF6FF; color: #1E40AF; border-color: #93C5FD; }
+.b95-matrix-sector-tag--diplomatic { background: #FAF5FF; color: #6B21A8; border-color: #D8B4FE; }
+.b95-matrix-sector-tag--health { background: #ECFDF5; color: #065F46; border-color: #6EE7B7; }
+.b95-matrix-sector-tag--urban { background: #FFFBEB; color: #92400E; border-color: #FDE68A; }
+.b95-matrix-sector-tag--comm { background: #F8FAFC; color: #334155; border-color: #CBD5E1; }
+
+/* Card Content */
+.b95-territory-card__content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.b95-territory-location {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--b95-font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--b95-slate-700);
+  margin-bottom: 0.5rem;
+}
+
+.b95-territory-title {
+  font-family: var(--b95-font-main);
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  color: var(--b95-slate-900);
+  margin-bottom: 0.65rem;
+  transition: color 0.2s ease;
+}
+
+.b95-territory-card:hover .b95-territory-title {
+  color: var(--b95-accent);
+}
+
+.b95-territory-scope {
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.55;
+  color: var(--b95-slate-900);
+  margin-bottom: 0.65rem;
+  border-left: 2px solid var(--b95-accent);
+  padding-left: 0.75rem;
+}
+
+.b95-territory-detail {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--b95-slate-600);
+  margin-bottom: 1.75rem;
+  flex-grow: 1;
+}
+
+/* Card Footer */
+.b95-territory-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid var(--b95-border);
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.b95-delivery-status {
+  font-family: var(--b95-font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #166534;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.b95-territory-client {
+  font-family: var(--b95-font-mono);
+  font-size: 0.72rem;
+  color: var(--b95-slate-500);
+}
+
+/* Responsive Behavior */
+@media (max-width: 1024px) {
+  .b95-operational-ribbon {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    padding: 1.5rem;
+  }
+
+  .b95-ribbon-sep {
+    display: none;
+  }
+
+  .b95-territory-matrix-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .b95-operational-ribbon {
+    grid-template-columns: 1fr;
+  }
+
+  .b95-territory-card {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .b95-card-anchor-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ==========================================================================
+   ULTRA-MINIMALIST SWISS PROJECT INDEX (REFERENCES SECTION REDESIGN)
+   Pure Swiss Typography · Massive Whitespace · Zero Clutter
+   ========================================================================== */
+
+.b95-references-minimal {
+  background-color: #FFFFFF;
+  padding: 6.5rem 0;
+  border-bottom: 1px solid var(--b95-border);
+}
+
+.b95-minimal-header {
+  margin-bottom: 4rem;
+  padding-bottom: 2.25rem;
+  border-bottom: 1px solid var(--b95-border);
+}
+
+.b95-minimal-eyebrow {
+  font-family: var(--b95-font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--b95-slate-500);
+  margin-bottom: 0.75rem;
+}
+
+.b95-minimal-eyebrow .b95-eyebrow-accent {
+  color: var(--b95-accent);
+}
+
+.b95-minimal-title {
+  font-family: var(--b95-font-main);
+  font-size: 2.85rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  color: var(--b95-slate-900);
+  margin-bottom: 0.65rem;
+}
+
+.b95-minimal-subtitle {
+  font-size: 1.05rem;
+  color: var(--b95-slate-600);
+  line-height: 1.6;
+}
+
+/* 2-Column Minimal Index Grid */
+.b95-project-index-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+}
+
+.b95-project-index-card {
+  position: relative;
+  background-color: #FFFFFF;
+  border: 1px solid var(--b95-border);
+  padding: 2.75rem 2.5rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+  transition: transform 0.25s var(--b95-ease-out), border-color 0.25s ease, box-shadow 0.25s ease;
+  outline: none;
+  cursor: default;
+}
+
+.b95-project-index-card:hover,
+.b95-project-index-card:focus-visible {
+  transform: translateY(-4px);
+  border-color: var(--b95-border-strong);
+  box-shadow: 0 16px 32px -8px rgba(15, 23, 42, 0.06);
+}
+
+.b95-index-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.7);
+}
+
+.b95-index-card__num {
+  font-family: var(--b95-font-mono);
+  font-size: 2.75rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--b95-border-strong);
+  transition: color 0.25s ease;
+}
+
+.b95-project-index-card:hover .b95-index-card__num {
+  color: var(--b95-accent);
+}
+
+.b95-index-card__loc {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--b95-font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--b95-slate-600);
+}
+
+.b95-loc-bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--b95-accent);
+  display: inline-block;
+}
+
+.b95-index-card__title {
+  font-family: var(--b95-font-main);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  color: var(--b95-slate-900);
+  margin: 0;
+  transition: color 0.2s ease;
+}
+
+.b95-project-index-card:hover .b95-index-card__title {
+  color: var(--b95-accent);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .b95-project-index-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .b95-references-minimal {
+    padding: 4.5rem 0;
+  }
+
+  .b95-minimal-title {
+    font-size: 2.1rem;
+  }
+
+  .b95-project-index-card {
+    padding: 2rem 1.5rem;
+    min-height: auto;
+  }
+
+  .b95-index-card__num {
+    font-size: 2.1rem;
+  }
+
+  .b95-index-card__title {
+    font-size: 1.15rem;
+  }
+}
+
+/* ==========================================================================
+   A4 ARCHITECTURAL CORPORATE MONOGRAPH & PRINT SYSTEM (PURE CSS)
+   Executive Portfolio Profile for B95 PROJECT (General Contracting & PM)
+   Strict Page Geometry, Running Folios, 2-Column Capabilities Index,
+   Flagship 50/50 Showcases, and 3x2 Supporting Regional Dossier Grid.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   CANVAS & DESK SIMULATION
+   -------------------------------------------------------------------------- */
+body {
+  background-color: #0F172A;
+  color: #0F172A;
+  margin: 0;
+  padding: 0;
+}
+
+.monograph-canvas {
+  background-color: #0F172A;
+  padding: 3rem 1.5rem 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.5rem;
+  min-height: 100vh;
+}
+
+/* --------------------------------------------------------------------------
+   STRICT A4 MONOGRAPH PAGE GEOMETRY & CANVAS
+   Warm Architectural Paper (#FDFBF7), Subtle Blueprint Micro-Grid,
+   Corner Registration Marks (+), and Deep Structural Accents
+   -------------------------------------------------------------------------- */
+.page-spread {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  background-color: #FDFBF7;
+  color: #0F172A;
+  padding: 52px 64px;
+  border-radius: 4px;
+  box-shadow: 0 25px 55px -12px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  background-image: 
+    linear-gradient(to right, rgba(15, 23, 42, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.025) 1px, transparent 1px);
+  background-size: 40px 40px;
+  box-sizing: border-box;
+  page-break-after: always;
+  break-after: page;
+  scroll-margin-top: 4.5rem;
+  overflow: hidden;
+}
+
+/* Faint Architectural Background Watermark (B95 Open Frame Motif) */
+.page-watermark-bg {
+  position: absolute;
+  right: -50px;
+  bottom: -50px;
+  width: 380px;
+  height: 380px;
+  border: 3px solid rgba(153, 27, 27, 0.035);
+  border-top: none;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  transform: rotate(-6deg);
+}
+
+.page-watermark-bg::before {
+  content: 'B95';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Space Grotesk', monospace, sans-serif;
+  font-size: 150px;
+  font-weight: 900;
+  color: rgba(160, 21, 4, 0.035);
+  letter-spacing: -0.05em;
+  pointer-events: none;
+}
+
+/* Signature B95 Open-Square Architectural Accent Frame */
+.b95-brand-frame-accent {
+  position: relative;
+}
+
+.b95-brand-frame-accent::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: 26px;
+  height: 26px;
+  border-top: 2.5px solid var(--b95-red);
+  border-left: 2.5px solid var(--b95-red);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.b95-brand-frame-accent::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  right: -8px;
+  width: 26px;
+  height: 26px;
+  border-bottom: 2.5px solid var(--b95-red);
+  border-right: 2.5px solid var(--b95-red);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Technical Alignment Corner Registration Marks (+) */
+.page-reg-mark {
+  position: absolute;
+  font-family: 'Space Grotesk', monospace, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--b95-red);
+  opacity: 0.65;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  z-index: 2;
+}
+
+.page-reg-mark--tl { top: 14px; left: 16px; }
+.page-reg-mark--tr { top: 14px; right: 16px; }
+.page-reg-mark--bl { bottom: 14px; left: 16px; }
+.page-reg-mark--br { bottom: 14px; right: 16px; }
+
+/* --------------------------------------------------------------------------
+   RUNNING HEADERS & PAGE FOLIOS (WITH LOGO & TECHNICAL METADATA)
+   -------------------------------------------------------------------------- */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 14px;
+  border-bottom: 3px double #CBD5E1;
+  margin-bottom: 26px;
+  position: relative;
+  z-index: 2;
+}
+
+.page-header-brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.95rem;
+}
+
+.page-header-logo {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.06));
+}
+
+.page-header-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.page-header-brand {
+  color: #0F172A;
+  font-weight: 800;
+  font-size: 0.825rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.page-header-slogan {
+  color: var(--b95-red);
+  font-family: 'Space Grotesk', monospace, sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.page-header-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+}
+
+.page-header-cat {
+  color: var(--b95-red);
+  font-weight: 800;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.page-header-coords {
+  color: #64748B;
+  font-family: 'Space Grotesk', monospace, sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+/* Double-Hairline Running Footer */
+.page-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 14px;
+  border-top: 3px double #CBD5E1;
+  margin-top: 36px;
+  position: relative;
+  z-index: 2;
+}
+
+.page-footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.page-footer-motto {
+  color: #334155;
+  font-size: 0.725rem;
+  font-style: italic;
+  letter-spacing: 0.01em;
+}
+
+.page-footer-sub {
+  color: #94A3B8;
+  font-size: 0.62rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.page-footer-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.page-footer-tagline {
+  font-family: 'Space Grotesk', monospace, sans-serif;
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: var(--b95-red);
+  text-transform: uppercase;
+}
+
+.page-footer-url {
+  color: #475569;
+  font-size: 0.725rem;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transition: color 0.2s ease;
+}
+
+.page-footer-url:hover {
+  color: var(--b95-red);
+}
+
+.page-footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+}
+
+.page-footer-doc {
+  font-family: 'Space Grotesk', monospace, sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #94A3B8;
+  text-transform: uppercase;
+}
+
+.page-footer-num {
+  font-family: 'Space Grotesk', monospace, sans-serif;
+  font-weight: 800;
+  color: #0F172A;
+  letter-spacing: 0.05em;
+  font-size: 0.85rem;
+}
+
+/* --------------------------------------------------------------------------
+   SHARED CHAPTER INTRO / EDITORIAL TITLE BLOCK
+   -------------------------------------------------------------------------- */
+.page-intro-block {
+  margin-bottom: 2.25rem;
+}
+
+.page-intro-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.page-intro-eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #64748B;
+}
+
+.page-intro-eyebrow .eyebrow-accent {
+  color: var(--b95-red);
+}
+
+.page-cad-stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: 'Space Grotesk', monospace, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #64748B;
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  padding: 0.25rem 0.65rem;
+  border-radius: 3px;
+}
+
+.page-cad-stamp i {
+  color: var(--b95-red);
+}
+
+.page-intro-title {
+  font-size: clamp(2rem, 3.2vw, 2.65rem);
+  font-weight: 800;
+  color: #0F172A;
+  letter-spacing: -0.03em;
+  line-height: 1.16;
+  margin: 0 0 0.75rem 0;
+}
+
+.page-intro-lead {
+  font-size: 1rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 860px;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 01: CAPABILITIES / SERVICES PAGE (ARCHITECTURAL MONOGRAPH)
+   Dominant Top Hero Feature Banner + 8 Standalone Modern Capability Cards
+   -------------------------------------------------------------------------- */
+
+/* TOP HERO ARCHITECTURAL STRIP (HERO MONOGRAPH) */
+/* TOP HERO ARCHITECTURAL STRIP (HERO MONOGRAPH) — B95 CORPORATE RED & WHITE THEME */
+.hero-monograph {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.05fr 1.25fr;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 1.75rem;
+  margin-bottom: 2.25rem;
+  border: 1px solid #E2E8F0;
+  border-top: 4px solid var(--b95-red);
+  box-shadow: 0 12px 32px -8px rgba(15, 23, 42, 0.08), 0 2px 8px -2px rgba(15, 23, 42, 0.03);
+}
+
+/* Corner registration crosshairs in official brand red */
+.hero-corner-mark {
+  position: absolute;
+  font-family: 'Space Grotesk', monospace, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--b95-red);
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 4;
+  line-height: 1;
+}
+
+.hero-corner-mark.top-left {
+  top: 7px;
+  left: 9px;
+}
+
+.hero-corner-mark.top-right {
+  top: 7px;
+  right: 9px;
+}
+
+.hero-corner-mark.bottom-left {
+  bottom: 7px;
+  left: 9px;
+}
+
+.hero-corner-mark.bottom-right {
+  bottom: 7px;
+  right: 9px;
+}
+
+.hero-monograph-media {
+  position: relative;
+  min-height: 270px;
+  overflow: hidden;
+  border-right: 1px solid #E2E8F0;
+}
+
+.hero-monograph-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.92) contrast(1.08);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-monograph:hover .hero-monograph-photo {
+  transform: scale(1.025);
+}
+
+.hero-monograph-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    170deg,
+    rgba(3, 7, 18, 0.08) 0%,
+    rgba(3, 7, 18, 0.28) 50%,
+    rgba(3, 7, 18, 0.88) 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  padding: 1.25rem 1.5rem;
+}
+
+.hero-monograph-meta-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  width: 100%;
+}
+
+.hero-monograph-tag {
+  font-family: 'Space Grotesk', monospace, sans-serif;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(18, 18, 18, 0.82);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 0.35rem 0.65rem;
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-monograph-tag i {
+  color: #EF4444;
+}
+
+.hero-monograph-card {
+  padding: 1.85rem 2.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: #FFFFFF;
+  color: #0F172A;
+  position: relative;
+}
+
+.hero-monograph-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid #E2E8F0;
+  flex-wrap: wrap;
+}
+
+.hero-monograph-stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: var(--b95-red-subtle);
+  border: 1px solid var(--b95-red);
+  color: var(--b95-red);
+  font-family: 'Space Grotesk', monospace, sans-serif;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.32rem 0.75rem;
+  border-radius: 3px;
+}
+
+.hero-monograph-stamp .stamp-pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--b95-red);
+  box-shadow: 0 0 8px var(--b95-red);
+  display: inline-block;
+}
+
+.hero-monograph-stamp .stamp-icon {
+  color: var(--b95-red);
+  font-size: 0.7rem;
+}
+
+.hero-monograph-stamp .stamp-divider {
+  color: rgba(160, 21, 4, 0.45);
+  font-weight: 500;
+  margin: 0 0.15rem;
+}
+
+.hero-monograph-stamp .stamp-sub {
+  color: #121212;
+  font-weight: 800;
+}
+
+.hero-monograph-ref {
+  font-family: 'Space Grotesk', monospace, sans-serif;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #64748B;
+  text-transform: uppercase;
+}
+
+.hero-monograph-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.hero-monograph-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0F172A;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.hero-monograph-desc {
+  font-size: 0.88rem;
+  color: #475569;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Balanced 3-Column Technical Specification Ledger (Pure White + Red Accent) */
+.hero-monograph-specs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid #E2E8F0;
+}
+
+.hero-spec-item {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-top: 2.5px solid var(--b95-red);
+  border-radius: 4px;
+  padding: 0.75rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-spec-item:hover {
+  background: #FFFFFF;
+  border-color: var(--b95-red);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px -4px rgba(160, 21, 4, 0.16);
+}
+
+.hero-spec-head {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'Space Grotesk', monospace, sans-serif;
+  font-size: 0.63rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--b95-red);
+  text-transform: uppercase;
+}
+
+.hero-spec-head i {
+  font-size: 0.68rem;
+}
+
+.hero-spec-title {
+  font-size: 0.81rem;
+  font-weight: 800;
+  color: #0F172A;
+  line-height: 1.25;
+  margin-top: 0.1rem;
+}
+
+.hero-spec-sub {
+  font-size: 0.68rem;
+  color: #64748B;
+  line-height: 1.35;
+}
+
+/* CAPABILITY CARDS (8 STANDALONE MODERN CARDS) */
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.capability-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-top: 3px solid transparent;
+  border-radius: 6px;
+  padding: 1.45rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.85rem;
+  box-shadow: 0 2px 8px -2px rgba(15, 23, 42, 0.04);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s ease,
+              border-color 0.25s ease,
+              border-top-color 0.25s ease;
+  outline: none;
+  cursor: default;
+}
+
+.capability-card:hover,
+.capability-card:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.1);
+  border-color: #CBD5E1;
+  border-top-color: var(--b95-red);
+}
+
+.card-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-icon-badge {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 6px;
+  background: var(--b95-red-subtle);
+  color: var(--b95-red);
+  border: 1px solid var(--b95-red-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.25s ease,
+              color 0.25s ease,
+              border-color 0.25s ease;
+}
+
+.capability-card:hover .card-icon-badge {
+  transform: scale(1.05);
+  background: var(--b95-red);
+  color: #FFFFFF;
+  border-color: var(--b95-red);
+}
+
+.card-num-index {
+  font-family: 'Space Grotesk', monospace, sans-serif;
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: rgba(15, 23, 42, 0.12);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  transition: color 0.25s ease;
+}
+
+.capability-card:hover .card-num-index {
+  color: rgba(160, 21, 4, 0.35);
+}
+
+.card-middle {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.card-category-pill {
+  display: inline-block;
+  font-size: 0.64rem;
+  font-weight: 700;
+  color: #64748B;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  padding: 0.18rem 0.5rem;
+  border-radius: 3px;
+  width: fit-content;
+  line-height: 1.25;
+}
+
+.card-title {
+  font-size: 0.985rem;
+  font-weight: 700;
+  color: #0F172A;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+.card-desc {
+  font-size: 0.8125rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+  flex-grow: 1;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 02: REGIONAL PORTFOLIO / REFERENCES SPREAD
+   Top Half: 2 Flagship Showcase Projects (50/50 Split)
+   Bottom Half: 6 Supporting Regional Commissions (3x2 Architectural Grid)
+   -------------------------------------------------------------------------- */
+.portfolio-flagships-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.flagship-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  outline: none;
+  cursor: default;
+}
+
+.flagship-card:hover,
+.flagship-card:focus-visible {
+  transform: translateY(-3px);
+  border-color: var(--b95-red);
+  box-shadow: 0 14px 28px -8px rgba(160, 21, 4, 0.15);
+}
+
+.flagship-media-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #0F172A;
+  overflow: hidden;
+}
+
+.flagship-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.flagship-card:hover .flagship-img {
+  transform: scale(1.04);
+}
+
+.flagship-media-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.6) 0%, transparent 40%, rgba(15, 23, 42, 0.4) 100%);
+  pointer-events: none;
+}
+
+.flagship-top-badges {
+  position: absolute;
+  top: 0.85rem;
+  left: 0.85rem;
+  right: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.flagship-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.flagship-badge--loc {
+  background: rgba(15, 23, 42, 0.82);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.flagship-badge--sector {
+  background: rgba(255, 255, 255, 0.94);
+  color: #0F172A;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.flagship-badge--sector i {
+  color: var(--b95-red);
+}
+
+.flagship-body {
+  padding: 1.45rem 1.65rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.flagship-idx-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.45rem;
+}
+
+.flagship-idx {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--b95-red);
+  font-family: 'Space Grotesk', monospace, sans-serif;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.flagship-client {
+  font-size: 0.675rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #64748B;
+  background: #F8FAFC;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  border: 1px solid #E2E8F0;
+}
+
+.flagship-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0F172A;
+  line-height: 1.3;
+  margin: 0 0 0.55rem 0;
+  letter-spacing: -0.015em;
+}
+
+.flagship-desc {
+  font-size: 0.85rem;
+  color: #475569;
+  line-height: 1.55;
+  margin: 0 0 1.15rem 0;
+  flex-grow: 1;
+}
+
+.flagship-spec-matrix {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.65rem;
+  background: #F8FAFC;
+  padding: 0.75rem 0.85rem;
+  border-radius: 4px;
+  border: 1px solid #E2E8F0;
+}
+
+.flagship-spec-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.spec-kicker {
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #64748B;
+}
+
+.spec-value {
+  font-size: 0.785rem;
+  font-weight: 700;
+  color: #0F172A;
+}
+
+/* Bottom Half: 6 Supporting Regional Commissions (3x2 Architectural Grid) */
+.portfolio-supporting-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.supporting-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 10px -2px rgba(15, 23, 42, 0.03);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  outline: none;
+  cursor: default;
+}
+
+.supporting-card:hover,
+.supporting-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--b95-red);
+  box-shadow: 0 10px 20px -6px rgba(15, 23, 42, 0.08);
+}
+
+.supporting-thumb-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #0F172A;
+}
+
+.supporting-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.supporting-card:hover .supporting-img {
+  transform: scale(1.04);
+}
+
+.supporting-flag-tag {
+  position: absolute;
+  bottom: 0.6rem;
+  left: 0.6rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.22rem 0.55rem;
+  border-radius: 9999px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+}
+
+.supporting-body {
+  padding: 1rem 1.15rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.supporting-top-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.45rem;
+}
+
+.supporting-idx {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--b95-red);
+  font-family: 'Space Grotesk', monospace, sans-serif;
+  line-height: 1;
+}
+
+.supporting-sector {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748B;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.supporting-sector i {
+  color: var(--b95-red);
+}
+
+.supporting-title {
+  font-size: 0.925rem;
+  font-weight: 700;
+  color: #0F172A;
+  line-height: 1.32;
+  margin: 0 0 0.45rem 0;
+  letter-spacing: -0.01em;
+}
+
+.supporting-desc {
+  font-size: 0.785rem;
+  color: #64748B;
+  line-height: 1.5;
+  margin: 0 0 0.85rem 0;
+  flex-grow: 1;
+}
+
+.supporting-metric {
+  font-size: 0.715rem;
+  font-weight: 600;
+  color: #334155;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  padding: 0.35rem 0.6rem;
+  border-radius: 3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.supporting-metric i {
+  color: #991B1B;
+}
+
+/* --------------------------------------------------------------------------
+   COVER & COLOPHON SPREAD REFINEMENTS
+   -------------------------------------------------------------------------- */
+.hero-cover-sheet,
+.footer-cinematic-sheet {
+  width: 100%;
+  max-width: 1200px;
+  height: 850px;
+  min-height: 850px;
+  padding: 0 !important;
+  overflow: hidden;
+  background-color: #000;
+  box-sizing: border-box;
+}
+
+/* Flag SVG utility */
+.b95-flag-svg {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+/* --------------------------------------------------------------------------
+   COLOPHON LEGAL BLOCK
+   -------------------------------------------------------------------------- */
+.colophon-legal-block {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  padding-top: 0.95rem;
+  max-width: 580px;
+}
+
+.colophon-legal-block strong {
+  font-family: 'Space Grotesk', monospace, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #FFFFFF;
+}
+
+.colophon-legal-block span {
+  font-size: 0.73rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.45;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE DESIGN (DESKTOP / TABLET / MOBILE)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1080px) {
+  .page-spread {
+    padding: 40px 36px;
+  }
+
+  .hero-monograph {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-monograph-media {
+    min-height: 230px;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .capabilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.15rem;
+  }
+
+  .portfolio-flagships-row {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-supporting-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .page-spread {
+    padding: 32px 24px;
+    margin: 20px 0;
+    border-radius: 0;
+  }
+
+  .monograph-canvas {
+    padding: 1rem 0 3rem;
+    gap: 2rem;
+  }
+
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-monograph-card {
+    padding: 1.45rem 1.35rem;
+  }
+
+  .hero-monograph-title {
+    font-size: 1.18rem;
+  }
+
+  .hero-monograph-specs {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+
+  .portfolio-supporting-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .page-header-meta {
+    align-items: flex-start;
+  }
+
+  .page-footer {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .page-footer-center {
+    align-items: flex-start;
+  }
+
+  .page-footer-right {
+    align-items: flex-start;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   STRICT A4 PRINT & PDF ENGINE RULES (@media print)
+   -------------------------------------------------------------------------- */
+@media print {
+  @page {
+    size: 210mm 297mm;
+    margin: 0 !important;
+  }
+
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: #000 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  /* ── ANTI-RASTERIZATION: Remove ALL properties that force GPU layer compositing.
+     backdrop-filter, filter, will-change, and translateZ all cause Chrome's print
+     engine to rasterize text as a bitmap instead of keeping it as crisp vector.
+     This universal reset is the ONLY reliable fix for pixelated text in PDF. ── */
+  *,
+  *::before,
+  *::after {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    filter: none !important;
+    will-change: auto !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+    animation: none !important;
+    -webkit-animation: none !important;
+    transition: none !important;
+  }
+
+  .site-nav {
+    display: none !important;
+  }
+
+  .monograph-canvas {
+    width: 1200px !important;
+    max-width: 1200px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 0 !important;
+    display: block !important;
+  }
+
+  /* Each spread is exactly one A4 page at 1200px coordinate space */
+  /* 1200px * (297/210) = 1697.14px */
+  .page-spread {
+    width: 1200px !important;
+    max-width: 1200px !important;
+    height: 1697px !important;
+    min-height: 1697px !important;
+    max-height: 1697px !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    page-break-before: always !important;
+    page-break-after: always !important;
+    break-before: page !important;
+    break-after: page !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    position: relative !important;
+  }
+
+  .page-spread:first-child {
+    page-break-before: avoid !important;
+    break-before: avoid !important;
+  }
+
+  .page-spread:last-child {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+
+  /* 01: Hero cover spread (Full Bleed A4) */
+  .hero-cover-sheet {
+    height: 1697px !important;
+    min-height: 1697px !important;
+    max-height: 1697px !important;
+    padding: 0 !important;
+    background: #000 !important;
+  }
+  .hero-cover-backdrop {
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: cover !important;
+  }
+  .hero-cover-overlay {
+    height: 100% !important;
+    min-height: 1697px !important;
+    padding: 5rem 4.5rem 4rem 4.5rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Interior sheets padding & flex layout */
+  .capabilities-monograph-sheet,
+  .portfolio-monograph-sheet,
+  .b95-case-study-monograph {
+    padding: 2.2rem 3.5rem 2rem 3.5rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    box-sizing: border-box !important;
+    background-color: #FFFFFF !important;
+  }
+
+  .page-content {
+    flex: 1 1 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+
+  /* 02: Capabilities Spread */
+  .capabilities-monograph-sheet .page-intro-block {
+    margin-bottom: 1.4rem !important;
+  }
+  .capabilities-monograph-sheet .hero-monograph {
+    margin-bottom: 1.4rem !important;
+  }
+
+  /* 03: Portfolio Spread — refined spacing for balanced bottom footer */
+  .portfolio-monograph-sheet {
+    padding: 2.2rem 3.5rem 2.2rem 3.5rem !important;
+  }
+  .portfolio-monograph-sheet .page-intro-block {
+    margin-bottom: 1.15rem !important;
+  }
+  .portfolio-flagships-row {
+    margin-bottom: 1.15rem !important;
+    gap: 1.15rem !important;
+  }
+  .flagship-img-wrap {
+    aspect-ratio: 16 / 7.6 !important;
+  }
+  .flagship-body {
+    padding: 0.9rem 1.15rem !important;
+  }
+  .flagship-desc {
+    margin-bottom: 0.65rem !important;
+    font-size: 0.82rem !important;
+    line-height: 1.45 !important;
+  }
+  .portfolio-supporting-grid {
+    gap: 0.95rem !important;
+  }
+  .supporting-thumb-wrap {
+    aspect-ratio: 16 / 7.8 !important;
+  }
+  .supporting-body {
+    padding: 0.7rem 0.85rem 0.85rem !important;
+  }
+  .supporting-desc {
+    margin-bottom: 0.45rem !important;
+    font-size: 0.76rem !important;
+    line-height: 1.38 !important;
+  }
+
+  /* 04: Featured Project Spread */
+  .b95-case-study-monograph {
+    padding: 2.2rem 3.5rem 2.2rem 3.5rem !important;
+  }
+  .b95-case-header {
+    margin-bottom: 1.25rem !important;
+    padding-bottom: 1.25rem !important;
+  }
+  .b95-case-headline {
+    font-size: 2.2rem !important;
+    margin: 0.2rem 0 0.4rem !important;
+  }
+  .b95-case-hero-stage {
+    aspect-ratio: 21 / 9 !important;
+    margin-bottom: 1.4rem !important;
+  }
+  .b95-case-breakdown-grid {
+    gap: 1.65rem !important;
+    margin-bottom: 1.4rem !important;
+  }
+  .b95-case-story-col {
+    padding: 0.75rem 1rem 0.75rem 0 !important;
+  }
+  .b95-story-lead {
+    font-size: 1.02rem !important;
+    line-height: 1.55 !important;
+    margin-bottom: 0.85rem !important;
+  }
+  .b95-story-text {
+    font-size: 0.86rem !important;
+    line-height: 1.55 !important;
+    margin-bottom: 0.75rem !important;
+  }
+  .b95-spec-card {
+    padding: 1.15rem 1.1rem !important;
+  }
+  .b95-spec-stat {
+    font-size: 1.85rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+  .b95-case-gallery-strip {
+    gap: 1.25rem !important;
+  }
+  .b95-strip-frame {
+    aspect-ratio: 16 / 9 !important;
+  }
+
+  /* 05: Colophon / Closing spread (Full Bleed A4) */
+  .footer-cinematic-sheet {
+    height: 1697px !important;
+    min-height: 1697px !important;
+    max-height: 1697px !important;
+    padding: 0 !important;
+    background: #000 !important;
+  }
+  .footer-cinematic-overlay {
+    height: 100% !important;
+    min-height: 1697px !important;
+    padding: 5rem 4.5rem 4rem 4.5rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    box-sizing: border-box !important;
+  }
+  .footer-brand-hero {
+    margin-top: auto !important;
+    margin-bottom: 4rem !important;
+  }
+  .footer-title-huge {
+    font-size: 4.5rem !important;
+    margin-bottom: 1.25rem !important;
+  }
+  .footer-mission-lead {
+    font-size: 2.2rem !important;
+  }
+}
+
+/* ==========================================================================
+   ARCHITECTURAL VISUAL MOTIFS — B95 BRAND IDENTITY DECORATIVE SYSTEM
+   ========================================================================== */
+
+/* 1. Diagonal engineering dot-grid watermark on each page spread (top-right) */
+.page-spread {
+  position: relative;
+}
+.page-spread::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 280px;
+  background-image: radial-gradient(circle, rgba(160, 21, 4, 0.04) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+/* 2. Red vertical rule — left accent spine on section titles */
+.page-intro-title {
+  position: relative;
+}
+.page-intro-title::before {
+  content: '';
+  position: absolute;
+  left: -1.4rem;
+  top: 10%;
+  bottom: 10%;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--b95-red), transparent);
+  border-radius: 2px;
+}
+
+/* 3. Capability cards — red top stripe for brand consistency */
+.capability-card {
+  border-top: 3px solid var(--b95-red) !important;
+}
+
+/* 4. Section eyebrow numbers — bold red accent */
+.eyebrow-accent,
+.b95-eyebrow-accent {
+  color: var(--b95-red);
+  font-weight: 900;
+}
+
+/* 5. Portfolio rows — red left border on hover */
+.b95-project-row {
+  border-left: 3px solid transparent;
+  transition: border-left-color 0.25s ease, background-color 0.25s ease;
+}
+.b95-project-row:hover {
+  border-left-color: var(--b95-red);
+  background-color: rgba(160, 21, 4, 0.025);
+}
+
+/* 6. Hero monograph — CSS corner bracket marks (CAD frame aesthetic) */
+.hero-monograph {
+  position: relative;
+}
+.hero-monograph::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 30px;
+  height: 30px;
+  border-top: 2px solid rgba(255, 255, 255, 0.5);
+  border-left: 2px solid rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  z-index: 5;
+}
+.hero-monograph::after {
+  content: '';
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 30px;
+  height: 30px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  border-right: 2px solid rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* 7. Case study hero image — corner bracket marks */
+.b95-case-hero-stage::before {
+  content: '';
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: 26px;
+  height: 26px;
+  border-top: 2px solid rgba(255, 255, 255, 0.6);
+  border-left: 2px solid rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+  z-index: 5;
+}
+.b95-case-hero-stage::after {
+  content: '';
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 26px;
+  height: 26px;
+  border-top: 2px solid rgba(255, 255, 255, 0.6);
+  border-right: 2px solid rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* 8. Subtle red gradient accent line — bottom-left of each interior page */
+.capabilities-monograph-sheet::before,
+.portfolio-monograph-sheet::before,
+.b95-case-study-monograph::before,
+.footer-monograph-sheet::before {
+  content: '';
+  position: absolute;
+  bottom: 48px;
+  left: 0;
+  width: 180px;
+  height: 2px;
+  background: linear-gradient(to right, var(--b95-red), transparent);
+  opacity: 0.16;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 9. Spec stat — red underline accent below each large KPI number */
+.b95-spec-stat {
+  padding-bottom: 0.55rem;
+  margin-bottom: 0.6rem;
+}
+
+/* 10. Page footer — subtle centered brand stamp */
+.page-footer {
+  position: relative;
+}
+
