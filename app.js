@@ -3,9 +3,31 @@
  * Minimal navigation active state and print routing
  */
 
-document.addEventListener('DOMContentLoaded', () => {
+const initializePage = () => {
   const navLinks = document.querySelectorAll('.nav-links-group a');
-  const sections = document.querySelectorAll('section.profile-sheet');
+  const navMenu = document.querySelector('.nav-menu');
+  const sections = document.querySelectorAll('section.page-spread[id]');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.open = false;
+    });
+  });
+
+  document.addEventListener('click', event => {
+    if (navMenu.open && !navMenu.contains(event.target)) navMenu.open = false;
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && navMenu.open) {
+      navMenu.open = false;
+      navMenu.querySelector('summary').focus();
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 860) navMenu.open = false;
+  });
 
   // Simple active state observer
   const observer = new IntersectionObserver((entries) => {
@@ -28,4 +50,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   sections.forEach(sec => observer.observe(sec));
-});
+};
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initializePage, { once: true });
+} else {
+  initializePage();
+}
